@@ -20,6 +20,7 @@
   "scripts": {
    "start": "node index.js",
    "dev":"nodeman index.js"
+   
 
   },
   "dependencies": {

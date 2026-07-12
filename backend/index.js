@@ -1,14 +1,18 @@
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
+const connectDB = require("./config/db");
 dotenv.config();
+connectDB();
 const app = express();
+app.use("/api/auth", require("./routes/authRoutes"));
+
 app.get("/", (req, res) => {
-    res.send("CityShop Backend is working properly"); 
+    res.send("CityShop Backend is working properly");
     
-})
-const PORT = process.env.port || 5000;
-app.listen(port, () => {
-    console.log("Server is running on port ${PORT}");
+});
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+    console.log('Server is running on port'+ PORT);
     
-})
+});
